@@ -25,23 +25,23 @@ function computerselection(min, max){
             return(choicepc);
 };
 
-function playerselection(min, max){
-    let rng= (Math.floor(Math.random() * (max - min) + min));
-      
-     choiceplayer = "rock"
-                 "paper"
-                 "scissors";  
-      if(rng == 1){
-          choiceplayer = "rock";
-      }
-          else if(rng == 2){
-              choiceplayer = "paper";
-          }
-              else{
-                  choiceplayer="scissors"
-              }
-              console.log("You selected: " + choiceplayer);
-              return(choiceplayer);
+function playerselection(){
+    
+    choiceplayer = prompt ("rock,paper or scissors?");
+    if(choiceplayer === "rock"){
+            return choiceplayer;
+        }
+            else if(choiceplayer === "paper"){
+                return choiceplayer;
+        }
+            else if(choiceplayer === "scissors"){
+                return choiceplayer;
+            }
+                else{
+                    console.log("invalit input,try again")
+                }
+
+
   };
 
 
@@ -91,9 +91,9 @@ function round(playerselection,computerselection){
 
 
 function game (){
-    for(let i = 0; i <= 5; i++){
+    for(let i = 0; i < 5; i++){
+        playerselection();
         computerselection(1, 4);
-        playerselection(1,4 );
         round(choicepc,choiceplayer);
     }
     if(playerScore > computerScore){
