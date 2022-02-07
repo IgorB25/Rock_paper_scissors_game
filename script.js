@@ -96,6 +96,12 @@ function game (){
         playerselection(1,4 );
         round(choicepc,choiceplayer);
     }
+    if(playerScore > computerScore){
+        console.log("Congratulations,YOU WIN!!");
+    }
+    else if(computerScore > playerScore){
+        console.log("Bad luck,you lose!!");
+    }
 }
 
 
@@ -103,8 +109,5 @@ function game (){
 //playerselection(1, 4);
 // round(choicepc,choiceplayer);//
 game();
-console.log(drawCount);
-console.log(playerScore);
-console.log(computerScore);
 
 
