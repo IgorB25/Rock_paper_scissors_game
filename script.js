@@ -1,12 +1,14 @@
 
 let choicepc;
 let choiceplayer;
+let playerScore = 0;
+let computerScore = 0;
+let drawCount = 0;
 
 
 
 function computerselection(min, max){
   let rng= (Math.floor(Math.random() * (max - min) + min));
-    console.log(rng);
    choicepc = "rock"
                "paper"
                "scissors";  
@@ -25,7 +27,7 @@ function computerselection(min, max){
 
 function playerselection(min, max){
     let rng= (Math.floor(Math.random() * (max - min) + min));
-      console.log(rng);
+      
      choiceplayer = "rock"
                  "paper"
                  "scissors";  
@@ -49,27 +51,60 @@ function round(playerselection,computerselection){
     
     if (choicepc == "rock" && choiceplayer == "paper"){
         console.log("Paper beats rock,You WIN!!");
+        return playerScore++;
     }
-    else if(choicepc === "rock" && choiceplayer === "scissors")
+    else if(choicepc === "rock" && choiceplayer === "scissors"){
         console.log("rock beats scissors,You LOSE!!"); 
-    else if(choicepc === "rock" && choiceplayer === "rock")
+        return computerScore++;
+    }
+        
+    else if(choicepc === "rock" && choiceplayer === "rock"){
         console.log("It's a DRAW");
-    else if(choicepc === "paper" && choiceplayer === "rock")
+        return drawCount++;
+    }
+    else if(choicepc === "paper" && choiceplayer === "rock"){
         console.log("paper beats rock,You LOSE!!");
-    else if(choicepc === "paper" && choiceplayer === "scissors")
+        return computerScore++;
+    }
+    else if(choicepc === "paper" && choiceplayer === "scissors"){
         console.log("scissors beat paper,You WIN!!");
-    else if(choicepc === "paper" && choiceplayer === "paper")
+        return playerScore++;
+    }
+    else if(choicepc === "paper" && choiceplayer === "paper"){
         console.log("It's a DRAW!!");
-    else if(choicepc === "scissors" && choiceplayer === "rock")
+       return drawCount++;
+    }
+
+    else if(choicepc === "scissors" && choiceplayer === "rock"){
         console.log("Rock beats scissors,You WIN!!");
-    else if(choicepc === "scissors" && choiceplayer === "paper")
+        return playerScore++;
+    }
+    else if(choicepc === "scissors" && choiceplayer === "paper"){
         console.log("Scissors beat rock,You LOSE!!");
-    else if(choicepc === "scissors" && choiceplayer === "scissors")
+        return computerScore++;
+    }
+    else if(choicepc === "scissors" && choiceplayer === "scissors"){
         console.log("It's a DRAW!!");
+        return drawCount++;
+    }
 }
 
 
+function game (){
+    for(let i = 0; i <= 5; i++){
+        computerselection(1, 4);
+        playerselection(1,4 );
+        round(choicepc,choiceplayer);
+    }
+}
 
-computerselection(1,4);
-playerselection(1, 4);
-round(choicepc,choiceplayer);
+
+//computerselection(1,4);
+//playerselection(1, 4);
+// round(choicepc,choiceplayer);//
+game();
+console.log(drawCount);
+console.log(playerScore);
+console.log(computerScore);
+
+
