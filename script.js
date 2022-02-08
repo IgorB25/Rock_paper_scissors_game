@@ -27,7 +27,8 @@ function computerselection(min, max){
 
 function playerselection(){
     
-    choiceplayer = prompt ("rock,paper or scissors?");
+    choiceplayer = prompt ("rock,paper or scissors?").toLowerCase();
+    
     if(choiceplayer === "rock"){
             return choiceplayer;
         }
@@ -97,10 +98,10 @@ function game (){
         round(choicepc,choiceplayer);
     }
     if(playerScore > computerScore){
-        console.log("Congratulations,YOU WIN!!");
+        console.log("Congratulations,YOU WON THE GAME!!");
     }
     else if(computerScore > playerScore){
-        console.log("Bad luck,you lose!!");
+        console.log("Bad luck,you lost the game!!");
     }
 }
 
