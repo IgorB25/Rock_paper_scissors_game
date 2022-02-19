@@ -6,6 +6,7 @@ let computerScore = 0;
 let drawCount = 0;
 
 
+//Computer rng selection 1-3 options//
 
 function computerselection(min, max){
   let rng= (Math.floor(Math.random() * (max - min) + min));
@@ -24,6 +25,8 @@ function computerselection(min, max){
             console.log("computer selected: " + choicepc);
             return(choicepc);
 };
+
+//Player selection 
 
 function playerselection(){
     
@@ -81,7 +84,7 @@ function round(playerselection,computerselection){
         return playerScore++;
     }
     else if(choicepc === "scissors" && choiceplayer === "paper"){
-        console.log("Scissors beat rock,You LOSE!!");
+        console.log("Scissors beat paper,You LOSE!!");
         return computerScore++;
     }
     else if(choicepc === "scissors" && choiceplayer === "scissors"){
@@ -92,11 +95,10 @@ function round(playerselection,computerselection){
 
 
 function game (){
-    for(let i = 0; i < 5; i++){
-        playerselection();
+    
         computerselection(1, 4);
         round(choicepc,choiceplayer);
-    }
+    
     if(playerScore > computerScore){
         console.log("Congratulations,YOU WON THE GAME!!");
     }
@@ -106,9 +108,33 @@ function game (){
 }
 
 
+
+
+const btnR = document.querySelector('#btnR');
+btnR.addEventListener('click', () =>{
+   round(choiceplayer = "rock",computerselection(1,4));
+});
+
+const btnP = document.querySelector('#btnP');
+btnP.addEventListener('click', () =>{
+    round(choiceplayer = "paper",computerselection(1,4));
+});
+
+const btnS = document.querySelector('#btnS');
+btnS.addEventListener('click', () =>{
+    round(choiceplayer = "scissors",computerselection(1,4));
+});
+
+    
+
+
+
+
+
+
 //computerselection(1,4);
 //playerselection(1, 4);
 // round(choicepc,choiceplayer);//
-game();
+//game();
 
 
