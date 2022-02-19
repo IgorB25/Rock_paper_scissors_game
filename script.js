@@ -96,34 +96,44 @@ function round(playerselection,computerselection){
 
 function game (){
     
-        computerselection(1, 4);
-        round(choicepc,choiceplayer);
-    
-    if(playerScore > computerScore){
-        console.log("Congratulations,YOU WON THE GAME!!");
-    }
-    else if(computerScore > playerScore){
-        console.log("Bad luck,you lost the game!!");
-    }
+        const btnR = document.querySelector('#btnR');
+        btnR.addEventListener('click', () =>{
+        round(choiceplayer = "rock",computerselection(1,4));
+            if(playerScore == 5){
+            console.log("Congratulations,YOU WON THE GAME!!");
+            }   
+                else if(computerScore == 5){
+                    console.log("Bad luck,YOU LOST THE GAME!!");
+                }
+        });
+
+        const btnP = document.querySelector('#btnP');
+        btnP.addEventListener('click', () =>{
+        round(choiceplayer = "paper",computerselection(1,4));
+            if(playerScore == 5){
+                console.log("Congratulations,YOU WON THE GAME!!");
+            }
+                else if(computerScore == 5){
+                    console.log("bad luck,YOU LOST THE GAME!!");
+                }
+        });
+
+        const btnS = document.querySelector('#btnS');
+        btnS.addEventListener('click', () =>{
+        round(choiceplayer = "scissors",computerselection(1,4));
+            if(playerScore == 5){
+                console.log("Congratulations,YOU WON THE GAME!!");
+            }
+                else if(computerScore == 5){
+                console.log("Bad luck,YOU LOST THE GAME!!");
+                }
+        });
 }
 
 
 
 
-const btnR = document.querySelector('#btnR');
-btnR.addEventListener('click', () =>{
-   round(choiceplayer = "rock",computerselection(1,4));
-});
 
-const btnP = document.querySelector('#btnP');
-btnP.addEventListener('click', () =>{
-    round(choiceplayer = "paper",computerselection(1,4));
-});
-
-const btnS = document.querySelector('#btnS');
-btnS.addEventListener('click', () =>{
-    round(choiceplayer = "scissors",computerselection(1,4));
-});
 
     
 
@@ -135,6 +145,6 @@ btnS.addEventListener('click', () =>{
 //computerselection(1,4);
 //playerselection(1, 4);
 // round(choicepc,choiceplayer);//
-//game();
+game();
 
 
