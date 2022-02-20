@@ -54,54 +54,54 @@ function playerselection(){
 function round(playerselection,computerselection){
     
     if (choicepc == "rock" && choiceplayer == "paper"){
-        console.log("Paper beats rock,You WIN!!");
+        notification.textContent = "Paper beats rock,You WIN!!";
         playerScore++;
         counter.textContent = playerScore + " : " + computerScore;
         return playerScore;
         
     }
     else if(choicepc === "rock" && choiceplayer === "scissors"){
-        console.log("rock beats scissors,You LOSE!!"); 
+        notification.textContent = "rock beats scissors,You LOSE!!"; 
         computerScore++;
         counter.textContent = playerScore + " : " + computerScore;
         return computerScore;
     }
         
     else if(choicepc === "rock" && choiceplayer === "rock"){
-        console.log("It's a DRAW");
+        notification.textContent = "It's a DRAW";
         return drawCount++;
     }
     else if(choicepc === "paper" && choiceplayer === "rock"){
-        console.log("paper beats rock,You LOSE!!");
+        notification.textContent = "paper beats rock,You LOSE!!";
         computerScore++;
         counter.textContent = playerScore + " : " + computerScore;
         return computerScore;
     }
     else if(choicepc === "paper" && choiceplayer === "scissors"){
-        console.log("scissors beat paper,You WIN!!");
+        notification.textContent = "scissors beat paper,You WIN!!";
         playerScore++;
         counter.textContent = playerScore + " : " + computerScore;
         return playerScore;
     }
     else if(choicepc === "paper" && choiceplayer === "paper"){
-        console.log("It's a DRAW!!");
+        notification.textContent = "It's a DRAW!!";
        return drawCount++;
     }
 
     else if(choicepc === "scissors" && choiceplayer === "rock"){
-        console.log("Rock beats scissors,You WIN!!");
+        notification.textContent = "Rock beats scissors,You WIN!!";
         playerScore++;
         counter.textContent = playerScore + " : " + computerScore;
         return playerScore;
     }
     else if(choicepc === "scissors" && choiceplayer === "paper"){
-        console.log("Scissors beat paper,You LOSE!!");
+        notification.textContent = "Scissors beat paper,You LOSE!!";
         computerScore++;
         counter.textContent = playerScore + " : " + computerScore;
         return computerScore;
     }
     else if(choicepc === "scissors" && choiceplayer === "scissors"){
-        console.log("It's a DRAW!!");
+        notification.textContent = "It's a DRAW!!";
         return drawCount++;
     }
 }
@@ -150,7 +150,7 @@ function game (){
 }
 
 
-
+const notification = document.querySelector('#notification');
 const counter = document.querySelector('#counter')
 const scoreboard = document.querySelector('#scoreboard')
 //const score = document.createElement("p");  
