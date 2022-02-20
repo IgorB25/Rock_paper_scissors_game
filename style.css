@@ -8,3 +8,31 @@
 }
 
 
+#scoreboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+}
+
+#playerscore{
+    display: flex;
+    margin: 50px;
+
+}
+
+#computerscore{
+    margin: 50px;
+}
+
+#counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerlist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
