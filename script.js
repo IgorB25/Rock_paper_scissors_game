@@ -22,7 +22,7 @@ function computerselection(min, max){
             else{
                 choicepc="scissors"
             }
-            console.log("computer selected: " + choicepc);
+            computerChose.textContent= "computer selected: " + choicepc;
             return(choicepc);
 };
 
@@ -150,6 +150,10 @@ function game (){
 }
 
 
+
+const computerChose = document.querySelector('#computerChose');
+//computerChose.textContent = "Computer Chose Scissors!";
+const options = document.querySelector('#options')
 const notification = document.querySelector('#notification');
 const counter = document.querySelector('#counter')
 const scoreboard = document.querySelector('#scoreboard')
