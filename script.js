@@ -114,10 +114,15 @@ function game (){
         btnR.addEventListener('click', () =>{
         round(choiceplayer = "rock",computerselection(1,4));
             if(playerScore == 5){
-            console.log("Congratulations,YOU WON THE GAME!!");
+                h3.textContent = "Congratulations,YOU WON THE GAME!!";
+                computerScore = 0;
+                playerScore = 0;
+
             }   
                 else if(computerScore == 5){
-                    console.log("Bad luck,YOU LOST THE GAME!!");
+                    h3.textContent = "Bad luck,YOU LOST THE GAME!!";
+                    computerScore = 0;
+                    playerScore = 0;
                 }
         });
 
@@ -125,10 +130,16 @@ function game (){
         btnP.addEventListener('click', () =>{
         round(choiceplayer = "paper",computerselection(1,4));
             if(playerScore == 5){
-                console.log("Congratulations,YOU WON THE GAME!!");
+                h3.textContent = "Congratulations,YOU WON THE GAME!!";
+                computerScore = 0;
+                playerScore = 0;
+                counter.textContent = playerScore + " : " + computerScore;
             }
                 else if(computerScore == 5){
-                    console.log("bad luck,YOU LOST THE GAME!!");
+                    h3.textContent = "bad luck,YOU LOST THE GAME!!";
+                    computerScore = 0;
+                    playerScore = 0;
+                    counter.textContent = playerScore + " : " + computerScore;
                 }
         });
 
@@ -136,23 +147,24 @@ function game (){
         btnS.addEventListener('click', () =>{
         round(choiceplayer = "scissors",computerselection(1,4));
             if(playerScore == 5){
-                score.textContent += "Congratulations,YOU WON THE GAME!!";
+                h3.textContent = "Congratulations,YOU WON THE GAME!!";
                 computerScore = 0;
                 playerScore = 0;
+                counter.textContent = playerScore + " : " + computerScore;
 
             }
                 else if(computerScore == 5){
-                score.textContent += "Bad luck,YOU LOST THE GAME!!";
+                h3.textContent = "Bad luck,YOU LOST THE GAME!!";
                 computerScore = 0;
                 playerScore = 0;
+                counter.textContent = playerScore + " : " + computerScore;
                 }
         });      
 }
 
 
-
+const h3 = document.querySelector('h3')
 const computerChose = document.querySelector('#computerChose');
-//computerChose.textContent = "Computer Chose Scissors!";
 const options = document.querySelector('#options')
 const notification = document.querySelector('#notification');
 const counter = document.querySelector('#counter')
