@@ -3,7 +3,8 @@
 #options{
     display: flex;
     align-items:center;
-    justify-content:space-evenly;
+    justify-content:center;
+    gap: 80px;
     padding-top: 250px;
 }
 
@@ -32,6 +33,13 @@
 }
 
 #notification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+#computerChose{
     display: flex;
     justify-content: center;
     align-items: center;
