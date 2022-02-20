@@ -55,11 +55,16 @@ function round(playerselection,computerselection){
     
     if (choicepc == "rock" && choiceplayer == "paper"){
         console.log("Paper beats rock,You WIN!!");
-        return playerScore++;
+        playerScore++;
+        counter.textContent = playerScore + " : " + computerScore;
+        return playerScore;
+        
     }
     else if(choicepc === "rock" && choiceplayer === "scissors"){
         console.log("rock beats scissors,You LOSE!!"); 
-        return computerScore++;
+        computerScore++;
+        counter.textContent = playerScore + " : " + computerScore;
+        return computerScore;
     }
         
     else if(choicepc === "rock" && choiceplayer === "rock"){
@@ -68,11 +73,15 @@ function round(playerselection,computerselection){
     }
     else if(choicepc === "paper" && choiceplayer === "rock"){
         console.log("paper beats rock,You LOSE!!");
-        return computerScore++;
+        computerScore++;
+        counter.textContent = playerScore + " : " + computerScore;
+        return computerScore;
     }
     else if(choicepc === "paper" && choiceplayer === "scissors"){
         console.log("scissors beat paper,You WIN!!");
-        return playerScore++;
+        playerScore++;
+        counter.textContent = playerScore + " : " + computerScore;
+        return playerScore;
     }
     else if(choicepc === "paper" && choiceplayer === "paper"){
         console.log("It's a DRAW!!");
@@ -81,11 +90,15 @@ function round(playerselection,computerselection){
 
     else if(choicepc === "scissors" && choiceplayer === "rock"){
         console.log("Rock beats scissors,You WIN!!");
-        return playerScore++;
+        playerScore++;
+        counter.textContent = playerScore + " : " + computerScore;
+        return playerScore;
     }
     else if(choicepc === "scissors" && choiceplayer === "paper"){
         console.log("Scissors beat paper,You LOSE!!");
-        return computerScore++;
+        computerScore++;
+        counter.textContent = playerScore + " : " + computerScore;
+        return computerScore;
     }
     else if(choicepc === "scissors" && choiceplayer === "scissors"){
         console.log("It's a DRAW!!");
@@ -94,8 +107,9 @@ function round(playerselection,computerselection){
 }
 
 
+
 function game (){
-    
+
         const btnR = document.querySelector('#btnR');
         btnR.addEventListener('click', () =>{
         round(choiceplayer = "rock",computerselection(1,4));
@@ -122,14 +136,25 @@ function game (){
         btnS.addEventListener('click', () =>{
         round(choiceplayer = "scissors",computerselection(1,4));
             if(playerScore == 5){
-                console.log("Congratulations,YOU WON THE GAME!!");
+                score.textContent += "Congratulations,YOU WON THE GAME!!";
+                computerScore = 0;
+                playerScore = 0;
+
             }
                 else if(computerScore == 5){
-                console.log("Bad luck,YOU LOST THE GAME!!");
+                score.textContent += "Bad luck,YOU LOST THE GAME!!";
+                computerScore = 0;
+                playerScore = 0;
                 }
-        });
+        });      
 }
 
+
+
+const counter = document.querySelector('#counter')
+const scoreboard = document.querySelector('#scoreboard')
+//const score = document.createElement("p");  
+//scoreboard.appendChild(score);
 
 
 
