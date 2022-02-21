@@ -53,6 +53,7 @@ function playerselection(){
 
 function round(playerselection,computerselection){
     
+    
     if (choicepc == "rock" && choiceplayer == "paper"){
         notification.textContent = "Paper beats rock,You WIN!!";
         playerScore++;
@@ -117,12 +118,14 @@ function game (){
                 h3.textContent = "Congratulations,YOU WON THE GAME!!";
                 computerScore = 0;
                 playerScore = 0;
+                counter.textContent = playerScore + " : " + computerScore;
 
             }   
                 else if(computerScore == 5){
                     h3.textContent = "Bad luck,YOU LOST THE GAME!!";
                     computerScore = 0;
                     playerScore = 0;
+                    counter.textContent = playerScore + " : " + computerScore;
                 }
         });
 
